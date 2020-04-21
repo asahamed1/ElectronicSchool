@@ -1,0 +1,86 @@
+.image{
+    background-image:url('../../assets/EmployeeAffaires/yls207_171.jpg');
+    background-size: cover;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, .7)
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .wrapper{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .link_wrapper{
+    margin: -50px;
+    display: inline-block;
+    height: 50px;
+    width: 300px;
+  }
+  
+  a{
+    display: inline-block;
+    width: 250px;
+    height: 50px;
+    margin-right: 0;
+    line-height: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    background: #04091e;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid #04091e;
+    transition: all .35s;
+  }
+  
+  .icon{
+    
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border: 3px solid transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    right: 0;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: all .35s;
+    transition: all .35s;
+  }
+  .icon svg{
+    display: none;
+  }
+  a:hover + .icon svg{
+    width: 30px;
+    display: block;
+    position: relative;
+   
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    transform: rotate(-45deg);
+    fill: #d82a4e;
+    transition: all .35s;
+  }
+  
+  a:hover{
+    width: 200px;
+    border: 3px solid #d82a4e;
+    background: transparent;
+    color: #d82a4e;
+  }
+  
+  a:hover + .icon{
+    border: 3px solid #d82a4e;
+    right: -25%;
+  }
+  
+  

@@ -1,0 +1,44 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Subject </h1>
+        <h2> Class Subject List</h2>
+        
+        <table >
+            <thead >
+                <tr><th>ID</th>
+                <th>ClassNo</th>
+                <th>StudentNo</th>
+                <th>SubjectName</th>
+                <th>TeacherName</th></tr>
+
+            </thead>
+            <tbody>
+                <%ClassSubject.forEach((subject)=>{%>
+                    <tr>
+                        <td><%=subject._id%></td>
+                        <td><%=subject.ClassNo%></td>
+                        <td><%=subject.StudentNo%></td>
+                        <%subject.Subject.forEach((sub)=>{%>
+                            <td><%=sub.SubjectName%></td>
+                            <td><%=sub.TeacherName%></td>    
+                        <%})%>
+                        
+                    </tr>
+                    <%})%>
+            </tbody>
+        </table>
+        <h2>Add New Class Subject</h2>
+
+        <form action="/subject" method="post" role="form">
+            ID : <input type="text" name="_id" class="form-control" placeholder="ID" /><br/>
+            ClassNo : <input type="text" name="ClassNo" class="form-control" placeholder="ID" /><br/>
+            StudentNo : <input type="text" name="StudentNo" class="form-control" placeholder="ID" /><br/>
+            Subject:
+          
+            <button type="submit" class="btn btn-success btn-lg" >Add</button>
+        </form>
+    </body>
+</html>

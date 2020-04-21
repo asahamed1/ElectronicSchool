@@ -1,0 +1,61 @@
+
+<form [formGroup]="roleForm"(ngSubmit)="addRole()" class="mt-10" id="addrole">
+
+  <div>
+  <input type="text" class="form-control"  [(ngModel)]="searchWord" style="margin-left: 138px" formControlName= "search" placeholder="search">
+
+
+  <input type="number" class="form-control" oninput="this.value =Math.abs(this.value)" style="margin-left: 10px" formControlName= "nationalId" placeholder="nationalId">
+  <span *ngIf="nationalId.errors?.min&&nationalId.touched">national Number should be 14 </span>
+  <span *ngIf="nationalId.errors?.max&&nationalId.touched">national Number should be 14 </span>
+</div>
+<div>
+<!-- <div id="i1"> -->
+  <div class="row" id="i1">
+
+    <div class="col-2" >  <label>Control&nbsp;	&nbsp;	&nbsp;</label></div>
+<div class="col-2"><input type="radio" value ="Control"  formControlName="rol" name="rol"> </div>
+</div>
+
+<div class="row" id="i1">
+
+<div class="col-2">  <label> EmployeeAffaires &nbsp;	&nbsp;	&nbsp;</label></div>
+<div class="col-2"><input type="radio" value ="EmployeeAffaires"  formControlName="rol" name="rol"> </div>
+
+</div>
+<div class="row" id="i1">
+
+  <div class="col-2">  <label>StudentAffaires &nbsp;	&nbsp;	&nbsp;</label></div>
+<div class="col-2"><input type="radio" value ="StudentAffaires"  formControlName="rol" name="rol"> </div>
+
+  </div>
+  </div>
+
+<button type="submit" style="margin-bottom: 10px" [disabled]="invalid()"  class="btn btn-danger">Add Role</button>
+</form>
+
+<table class="table table-hover table-responsive-large">
+      <thead class="thead-dark">
+        <tr>
+        
+          <th scope="col">FullName</th>
+          <th scope="col">NationalID</th>
+          <th scope="col">Role</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of employeeList ">
+        <tr *ngIf="searchWord==''|| item.FullName.toLowerCase().includes(searchWord.toLowerCase())" >
+         
+          <td>{{item.FullName}}</td>
+          <td>{{item.NationalID}}</td>
+
+          <td>{{item.Role}}</td>
+
+          <!-- <td>{{item.FullName}}</td>
+
+          <td>{{item.FullName}}</td> -->
+
+        </tr>
+      
+      </tbody>
+    </table>

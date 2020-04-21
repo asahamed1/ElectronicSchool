@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Control </h1>
+       
+
+        <h2>Add degree</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject Name</th>
+                    <th>Teacher Name</th>
+                    <th>Degree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%stdData.forEach((std)=>{%>
+                    <tr>
+                        <td><%=std.SubjectName%></td>
+
+                        <td><%=std.TeacherName%></td>
+                        <td><input type="number" placeholder="Add Degree"/></td>
+                     </tr>    
+                <%})%>
+            </tbody>
+        </table>
+    </body>
+</html>

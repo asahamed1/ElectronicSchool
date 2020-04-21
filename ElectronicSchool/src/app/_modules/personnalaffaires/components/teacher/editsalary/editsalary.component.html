@@ -1,0 +1,16 @@
+
+<div class="container bordre offset-md-3 col-md-6 w-lg-50 ">
+
+<form #form="ngForm" class="p-3 m-5">
+  <label >Old Salary</label>
+  <div class="col">
+    <input type="text"  oninput = "this.value =Math.abs(this.value)" name ="oldSalary"[(ngModel)]="oldTeacherSalary" class="form-control">
+  </div>
+  <label>New Salary</label>
+
+  <div class="col">
+    <input type="Number"  oninput = "this.value =Math.abs(this.value)"  name ="newSalary"[(ngModel)]="newTeacherSalary" class="form-control">
+</div>
+<button class="btn btn-danger" [disabled]="inValid()" (click)="updateTeacherSalary(form.value)"> update Salary</button>
+</form>
+</div>

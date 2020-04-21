@@ -1,0 +1,30 @@
+<div class="container" [style.height.px]='InnerHeight'>
+    <div class="container user-table">
+    
+        <!-- No data message -->
+        <div class="alert alert-success text-center" role="alert" *ngIf="schoolsystem.length <= 0">
+            No News Added!
+        </div>
+    
+        <table class="table table-bordered table-dark" style="text-align: center;"> 
+            <thead class=" thead-dark">
+               <tr>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th colspan="2" style="text-align: center;">Control </th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let newdata of schoolsystem; let i = index">
+                <td scope="row"><img [src]="newdata.img" style="height: 100px;" class="mr-3" ></td>
+                <td scope="row">{{newdata.title}}</td>
+                <td scope="row">{{newdata.description}}</td>
+                <td colspan="2">
+                    <button class="btn  btn-danger" (click)="deleteNews(newdata._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    </div>

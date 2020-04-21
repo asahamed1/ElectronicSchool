@@ -1,0 +1,343 @@
+<app-header></app-header>
+<!-- activities section -->
+<section class="categories-section spad">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our News of my School</h2>
+      </div>
+      <!-- *ngFor="let n of news" -->
+      <div class="row">
+        <!-- <div class="owl-carousel owl-theme"> -->
+        <!-- <div class=""> -->
+  
+        <div class="col-lg-4 col-md-6" *ngFor="let n of news">
+          <div class="ci-thumb set-bg ci-text card content">
+            <div class="card-header text-center">
+              <h5>{{n.title}}</h5>
+            </div>
+            <div class="card-body">
+              <img [src]="n.img" class="card-img" style="height:200px;">
+            </div>
+            <div class="card-footer">
+              <p style="justify-content:center;">{{n.description}}</p>
+            </div>
+          </div>
+        <br /> <br /><br />
+        </div>
+  
+  
+        <!-- 1// -->
+  
+  
+        <!-- ////////////////// end of 1-->
+  
+  
+  
+        <!-- 2// -->
+        <!-- <div class="col-lg-4 col-md-6">
+          <div class="ci-thumb set-bg ci-text card content">
+            <div class="card-header text-center">
+              <h5>{{activities[1].title}}</h5>
+            </div>
+            <div class="card-body">
+              <img src="../../../../assets/brooke-cagle-1181672-unsplash-1200x673.jpg" class="card-img">
+            </div>
+            <div class="card-footer">
+              <p style="justify-content:center;">{{activities[1].description}}</p>
+            </div>
+          </div>
+        </div> -->
+        <!-- ////////////////// end of 2-->
+  
+  
+  
+        <!-- 3// -->
+        <!-- <div class="col-lg-4 col-md-6">
+          <div class="ci-thumb set-bg ci-text card content">
+            <div class="card-header text-center">
+              <h5>{{activities[2].title}}</h5>
+            </div>
+            <div class="card-body">
+              <img src="../../../../assets/brooke-cagle-1181672-unsplash-1200x673.jpg" class="card-img">
+            </div>
+            <div class="card-footer">
+              <p style="justify-content:center;">{{activities[2].description}}</p>
+            </div>
+          </div>
+        </div> -->
+        <!-- ////////////////// end of 3-->
+  
+  
+  
+  
+        <!-- 4// -->
+        <!-- <div class="col-lg-4 col-md-6">
+          <div class="ci-thumb set-bg ci-text card content">
+            <div class="card-header text-center">
+              <h5>{{activities[3].title}}</h5>
+            </div>
+            <div class="card-body">
+              <img src="../../../../assets/brooke-cagle-1181672-unsplash-1200x673.jpg" class="card-img">
+            </div>
+            <div class="card-footer">
+              <p style="justify-content:center;">{{activities[3].description}}</p>
+            </div>
+          </div>
+        </div> -->
+        <!-- ////////////////// end of 4-->
+  
+  
+  
+        <!-- 5// -->
+        <!-- <div class="col-lg-4 col-md-6">
+          <div class="ci-thumb set-bg ci-text card content">
+            <div class="card-header text-center">
+              <h5>{{activities[4].title}}</h5>
+            </div>
+            <div class="card-body">
+              <img src="../../../../assets/brooke-cagle-1181672-unsplash-1200x673.jpg" class="card-img">
+            </div>
+            <div class="card-footer">
+              <p style="justify-content:center;">{{activities[4].description}}</p>
+            </div>
+          </div>
+        </div> -->
+        <!-- ////////////////// end of 5-->
+  
+  
+  
+        <!-- 6// -->
+        <!-- <div class="col-lg-4 col-md-6">
+          <div class="ci-thumb set-bg ci-text card content">
+            <div class="card-header text-center">
+              <h5>{{activities[5].title}}</h5>
+            </div>
+            <div class="card-body">
+              <img src="../../../../assets/brooke-cagle-1181672-unsplash-1200x673.jpg" class="card-img">
+            </div>
+            <div class="card-footer">
+              <p style="justify-content:center;">{{activities[5].description}}</p>
+            </div>
+          </div>
+        </div> -->
+        <!-- ////////////////// end of 6-->
+      </div>
+      <!--end of row-->
+  
+    </div>
+    <!--end of container-->
+  </section>
+  <!-- activities section end -->
+  
+  
+  <!-- target section -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-warp">
+        <div class="section-title text-white">
+          <h2>School Targets</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <h6 style="color: white;">
+              1.Establishing Islamic belief in the same child, and nurturing it through integrated Islamic education,
+              whether in ethics, body, mind, or language.
+              2.Training the student to perform prayer, teach him virtues and etiquette.
+              3.Development of basic skills for motor skills, numerical and linguistic.
+              4.Providing the student with the appropriate amount of information in various fields and topics.
+              5.Acquainting the student with God's blessings, whether in the soul, or in the geographical and social
+              environment, in order to improve the use of blessings, and benefit himself and his environment.
+              6.To develop the student's good taste, by increasing appreciation for manual work.
+              7.To develop awareness for the student in order to realize his duties and rights within the limits of his
+              age.
+              8.Instilling patriotism in the child's heart. Generating the desire of the student to obtain useful
+              knowledge, and to do good deeds.
+              9.Training the student to take advantage of the free time. Providing the student for the next stages of his
+              life.
+  
+  
+            </h6>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- target section end -->
+  
+  
+  <!-- Activities section -->
+  <section class="course-section spad">
+    <div class="container">
+      <div class="section-title mb-0">
+        <h2>Our Activities</h2>
+        <p>People who use time wisely spend it on activities that advance their overall purpose in life.
+        </p>
+      </div>
+    </div>
+    <div class="course-warp">
+      <ul class="course-filter controls">
+        <li class="control active" data-filter=".all">All</li>
+        <li class="control" data-filter=".finance">Religion Practise</li>
+        <li class="control" data-filter=".design">Music Practise</li>
+        <li class="control" data-filter=".web">Paint Practise</li>
+        <li class="control" data-filter=".photo">Football </li>
+      </ul>
+      <div class="row course-items-area">
+  
+        <div class="mix col-lg-3 col-md-4 col-sm-6 all card" *ngFor="let a of activities">
+          <div class="course-item">
+            <div class="course-thumb set-bg card-header">
+              <img [src]="a.img" class="card-img" style="height:200px;">
+              <!-- <img src="../../../../assets/brooke-cagle-1181672-unsplash-1200x673.jpg"> -->
+            </div>
+            <div class="course-info card-body">
+              <div class="course-text">
+                <h5 style="color:#D82A4E;">{{a.title}}</h5>
+              </div>
+              <div>
+                <p style="justify-content: center;">{{a.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of 1-->
+  
+  
+  
+        <div class="mix col-lg-3 col-md-4 col-sm-6 finance card " *ngFor="let a of activities">
+          <div class="course-item">
+            <div class="course-thumb set-bg card-header">
+  
+              <img [src]="a.img" class="card-img" style="height:200px;">
+  
+              <!-- <img src="../../../../assets/brooke-cagle-1181672-unsplash-1200x673.jpg"> -->
+            </div>
+            <div class="course-info card-body">
+              <div class="course-text">
+                <h5 style="color:#D82A4E;">{{a.title}}</h5>
+              </div>
+              <div>
+                <p style="justify-content: center;">{{a.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of 1-->
+  
+  
+        <div class="mix col-lg-3 col-md-4 col-sm-6 design card" *ngFor="let a of activities">
+          <div class="course-item">
+            <div class="course-thumb set-bg card-header">
+              <img [src]="a.img" class="card-img" style="height:200px;">
+              <!-- <img src="../../../../assets/brooke-cagle-1181672-unsplash-1200x673.jpg"> -->
+            </div>
+            <div class="course-info card-body">
+              <div class="course-text">
+                <h5 style="color:#D82A4E;">{{a.title}}</h5>
+              </div>
+              <div>
+                <p style="justify-content: center;">{{a.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of 1-->
+  
+  
+        <div class="mix col-lg-3 col-md-4 col-sm-6 web card" *ngFor="let a of activities">
+          <div class="course-item">
+            <div class="course-thumb set-bg card-header">
+              <img [src]="a.img" class="card-img" style="height:200px;">
+              <!-- <img src="../../../../assets/brooke-cagle-1181672-unsplash-1200x673.jpg"> -->
+            </div>
+            <div class="course-info card-body">
+              <div class="course-text">
+                <h5 style="color:#D82A4E;">{{a.title}}</h5>
+              </div>
+              <div>
+                <p style="justify-content: center;">{{a.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of 1-->
+  
+  
+        <div class="mix col-lg-3 col-md-4 col-sm-6 photo card" *ngFor="let a of activities">
+          <div class="course-item">
+            <div class="course-thumb set-bg card-header">
+  
+              <img [src]="a.img" class="card-img" style="height:200px;">
+  
+              <!-- <img src="../../../../assets/brooke-cagle-1181672-unsplash-1200x673.jpg"> -->
+            </div>
+            <div class="course-info card-body">
+              <div class="course-text">
+                <h5 style="color:#D82A4E;">{{a.title}}</h5>
+              </div>
+              <div>
+                <p style="justify-content: center;">{{a.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end of 1-->
+  
+  
+      </div>
+    </div>
+  </section>
+  <!-- Activity section end -->
+  
+  
+  <!-- managment section -->
+  <section class="signup-section spad">
+    <div class="signup-bg set-bg">
+      <img  src="../../../../assets/img/signup-bg.jpg" style="    height: 100%">
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="signup-warp">
+            <div class="section-title text-white text-left">
+              <h2>School Managment</h2>
+              <p>
+                School Management Information System:
+                 An Effective Tool for Augumenting the School Practices Abstract The technological advancements have influenced the society so as to take a leap towards success. Every technological reform is a small step towards advancement and progress of mankind.
+                  Developments in information technologies have also been impacting upon educational organizations.
+                   The introduction of technology in schools can thus result in a decreased use of paper and in bringing most of the school office work in an e-format.
+                    Thus, the schools should employ management information systems to improve the efficiency of administrative services.
+                     A school management information system (SMIS) is a system or process that provides the information necessary to manage a school effectively. 
+                     They provide an objective system for recording and aggregating information and supports the institution’s strategic goals and direction. 
+                     The administrative processes and the official procedures of school can be simplified by the means of management information systems. School records, the information about all the students,
+                      teachers and other school employees can efficiently be maintained by means of school management information systems.
+                      On the similar lines, the time-table and attendance records of the pupils and teachers can be maintained by means of time-table and attendance management system respectively.
+                       <!-- Further, the management information systems can effectively maintain the data pertaining to examination, financial issues; facilities and assets management of the institutions. To sum up, school management information systems not only eases the office work but also ensures the efficient functioning of the schools. It makes possible, a more effective way of storage and distribution of information. Therefore, realization of the importance of management information systems in schools and its successful implementation is a necessity. There is a dire need to employ such systems to bring qualitative improvement in the prevalent educational practices. Key words: information technology, school management information system -->
+  <!-- Discover the world's re -->
+              </p>
+  
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- managment section end -->
+  
+  
+  <!-- last section -->
+  <section class="banner-section spad">
+    <div class="container">
+      <div class="section-title mb-0 pb-2">
+        <h2>Learn as much as you can while you are young !</h2>
+        <p>
+          Let us remember : One book , One pen , One chiled and one teacher can change the world !
+        </p>
+      </div>
+     
+    </div>
+  </section>
+  <!--last section end -->
+  <app-footer></app-footer>

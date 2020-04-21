@@ -1,0 +1,192 @@
+<!-- <div class="row">
+    <div class="col-12">
+        <form [formGroup]='addParent' (ngSubmit)='save()'>
+
+            <div class="form-group">
+                <label for="id">Student Id</label>
+                <input type="text" class="form-control" id="id" formControlName="id" placeholder="ID">
+                <span class="text-danger" *ngIf="id.touched &&  id.errors?.required"> id is required </span>
+            </div>
+
+            <div class="form-group">
+                <label>Name : </label>
+                <input class="form-control" type="text" formControlName="name" placeholder="Name">
+                <span class="text-danger" *ngIf="name.touched &&  name.errors?.required"> name is required </span>
+            </div>
+
+            <div class="form-group">
+                <label>Username: </label>
+                <input class="form-control" type="text" formControlName="username" placeholder="User Name">
+                <span class="text-danger" *ngIf="username.errors?.required&&username.touched">UserName is required
+                    ..</span>
+            </div>
+
+            <div class="form-group">
+                <label>password: </label>
+                <input class="form-control" type="number" formControlName="password" placeholder="Password">
+                    <span class=" text-danger" *ngIf="password.errors?.required&&password.touched">Password is required
+                ..</span>
+            </div>
+
+
+            <div class="form-group">
+                <label>nationalId: </label>
+                <input class="form-control" type="number" formControlName="nationalid" placeholder="NationalId">
+                <span class="text-danger" *ngIf="nationalid.errors?.required&&nationalid.touched">nationalId is
+                    required
+                    ..</span>
+            </div>
+
+            <div class="form-group">
+                <label>Address: </label>
+                <input class="form-control" type="text" formControlName="address" placeholder="Address">
+                <span class="text-danger" *ngIf="address.errors?.required&&address.touched">Address is required
+                    ..</span>
+            </div>
+
+
+            <div class="form-group">
+                <label>phoneNumber: </label>
+                <input class="form-control" type="number" formControlName="phone" placeholder="Phone">
+                <span class="text-danger" *ngIf="phone.errors?.required&&phone.touched">phoneNumber is required
+                    ..</span>
+            </div>
+
+            <input type="submit" value="Add Parent" class="btn btn-primary btn-block">
+        </form>
+    </div>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div> -->
+
+
+ <!-- ******************************** ANOTHER WAY ******************************** -->
+<!-- <form [formGroup]="AddingParent" > -->
+    <div class="container offset-md-3 col-md-6 w-lg-50 back">
+         
+
+        <div class="row">
+            <div class="col">
+                <h1 class='text-center p-3'>Add Parent</h1>    
+                <form [formGroup]="loginForm" (ngSubmit)="save()" class="appointment-form">
+                    <!-- ******************************** -->
+                    <div class="form-group">
+                        <!-- ID -->
+                        <input formControlName="_id" type="number" class="form-control" placeholder="ID">
+    
+                        <div class="alert alert-danger mt-3"
+                            *ngIf="loginForm.controls._id?.touched && loginForm.controls._id.errors?.required">
+                            ID is Required
+                        </div>
+                    </div>
+                     <!-- ******************************** -->
+                     
+    
+    
+    
+                     <div class="form-group">
+                        <!-- Name -->
+                        <input formControlName="name" type="text" class="form-control" placeholder="Name">
+    
+                        <div class="alert alert-danger mt-3"
+                            *ngIf="loginForm.controls.name?.touched && loginForm.controls.name.errors?.required">
+                            Name is Required
+                        </div>
+                    </div> 
+                     <!-- ******************************** -->
+                     <div class="form-group">
+                        <!-- userName -->
+                        <input formControlName="userName" type="text" class="form-control" placeholder="Username">
+    
+                        <div class="alert alert-danger mt-3"
+                            *ngIf="loginForm.controls.userName?.touched && loginForm.controls.userName.errors?.required">
+                            Username is Required
+                        </div>
+                    </div>
+                     <!-- ******************************** -->
+                     <div class="form-group">
+                        <!-- Password -->
+                        <input formControlName="password" type="password" class="form-control" placeholder="Password">
+    
+                        <div class="alert alert-danger mt-3"
+                            *ngIf="loginForm.controls.password?.touched && loginForm.controls.password.errors?.required">
+                            Password is Required
+                        </div>
+                    </div>
+                     <!-- ******************************** -->
+                     <div class="form-group">
+                        <!-- National ID -->
+                        <input formControlName="nationalId" (blur)='check()' pattern="^(\d{14})$" type="number" class="form-control"
+                            placeholder="National ID">
+    
+                        <div class="alert alert-danger mt-3"
+                            *ngIf="loginForm.controls.nationalId?.touched && loginForm.controls.nationalId.errors?.required">
+                            National Id is Required
+                        </div>
+    
+                        <div class="alert alert-danger mt-3"
+                            *ngIf="loginForm.controls.nationalid?.touched && loginForm.controls.nationalid.errors?.pattern?.requiredPattern">
+                            National ID must be 14 Numbers
+                        </div>
+                    </div>
+                     <!-- ******************************** -->
+                     <div class="form-group">
+                        <!-- Address -->
+                        <input formControlName="Address" type="text" class="form-control" placeholder="Address">
+    
+                        <div class="alert alert-danger mt-3"
+                            *ngIf="loginForm.controls.Address?.touched && loginForm.controls.Address.errors?.required">
+                            Address is Required
+                        </div>
+                    </div>
+                     <!-- ******************************** -->
+                     <div class="form-group">
+                        <!-- phone -->
+                        <input formControlName="phoneNumber" type="number" pattern="^(\d{11})$"  class="form-control" placeholder="phoneNumber">
+    
+                        <div class="alert alert-danger mt-3"
+                            *ngIf="loginForm.controls.phoneNumber?.touched && loginForm.controls.phoneNumber.errors?.required">
+                            phone is Required
+                        </div>
+                        <div class="alert alert-danger mt-3"
+                        *ngIf="loginForm.controls.phoneNumber?.touched && loginForm.controls.phoneNumber.errors?.required">
+                        National Id is Required
+                    </div>
+    
+                    </div>
+    
+                    <!-- ******************************** -->
+                    <div class="form-group">
+                        <!--------Student National ID -->
+                        <input formControlName="student_nationalId" pattern="^(\d{14})$" type="number" class="form-control"
+                        placeholder="Student National ID">
+    
+                    <div class="alert alert-danger mt-3"
+                        *ngIf="loginForm.controls.student_nationalId?.touched && loginForm.controls.student_nationalId.errors?.required">
+                        National Id is Required
+                    </div>
+    
+                    <div class="alert alert-danger mt-3"
+                        *ngIf="loginForm.controls.student_nationalId?.touched && loginForm.controls.student_nationalId.errors?.pattern?.requiredPattern">
+                        National ID must be 14 Numbers
+                    </div>
+                </div>
+    
+                    <!-- ******************************** -->
+                    <h4 *ngIf='isExist' class="text-center text-danger m-3">Sorry, this parent is exist ...</h4>
+
+                    <div class="form-group">
+                        <button type="submit" [disabled]="!loginForm.valid" 
+                            class="btn btn-danger py-3 px-4" style='margin-left: 40%; background-color:#d82a4e'>
+                            Add
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div> 
+    

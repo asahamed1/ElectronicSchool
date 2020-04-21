@@ -1,0 +1,88 @@
+<div class="container bordre offset-md-3 col-md-6 w-lg-50 ">
+
+
+<form  [formGroup]="addTeacherForm" id ="form" (ngSubmit)="updateTeacher()" class="m-5 ">
+  <div class="form-row">
+    <div class="col">
+      <input type="text" pattern="[a-zA-Z ]*" [ngModel]="teacher.fullName" class="form-control"  formControlName="fullName" placeholder="Full Name">
+      <span *ngIf="fullName.errors?.required&&fullName.touched" > name is required</span>
+      <span *ngIf="fullName.errors?.minlength&&fullName.touched" > minlength is 16 letter </span>
+      <!-- <span *ngIf="fullName.errors?.pattern.requiredPattern&&fullName.touched" > only letters allowed </span> -->
+    </div>
+    <div class="col">
+      <input type="text" [ngModel]="teacher.Address" class="form-control" placeholder="Address"  formControlName="Address">
+      <span *ngIf="Address.errors?.required&&Address.touched" > Address is required</span> 
+      <span *ngIf="Address.errors?.minlength&&Address.touched" > Address is 16 letter </span>
+       
+    </div>
+  </div>
+ 
+  <div class="form-row">
+    <div class="col">
+      <input type="number" class="form-control"   [ngModel]="teacher.phoneNumber" placeholder="Phone Number" formControlName="phoneNumber">
+      <span *ngIf="phoneNumber.errors?.required&&phoneNumber.touched" > phoneNumber is required</span>
+      <span *ngIf="phoneNumber.errors?.min&&phoneNumber.touched" > phoneNumber is 11 letter </span>
+      <span *ngIf="phoneNumber.errors?.max&&phoneNumber.touched" > phoneNumber is 11 letter </span>
+
+    </div>
+    <div class="col">
+      <input type="number" (blur)='check()'  oninput="this.value =Math.abs(this.value)" class="form-control" placeholder="NationalId"  [ngModel]="teacher.nationalId" formControlName="nationalId">
+      <span *ngIf="nationalID.errors?.required&&nationalID.touched" > nationalId is required</span> 
+          <span *ngIf="nationalID.errors?.min&&nationalID.touched">nationalId Number should be 14 </span>
+          <span *ngIf="nationalID.errors?.max&&nationalID.touched">nationalId Number should be 14 </span>
+
+      
+    </div>
+  </div>
+
+  <div class="form-row">
+      <div class="col">
+        <select class="form-control mb-2"  style="width: 450px"  [(ngModel)]="teacher.subjects.subjectName"  formControlName="subject">
+          <option *ngFor='let sub of subjectt' [value]='sub'>{{sub}}</option>
+        </select>
+          <!-- <input type="text" pattern="[a-zA-Z ]*" [(ngModel)]="teacher.subjects.subjectName"  placeholder="subject" class="form-control"   formControlName="subject"> -->
+           <span *ngIf="subject.errors?.required&&subject.touched" > subject is required</span>  
+           <!-- <span *ngIf="subject.errors?.pattern.requiredPattern&&subject.touched" > only letters allowed </span> -->
+      </div>
+      <div class="col hi" > 
+         
+              <ng-multiselect-dropdown formControlName="classes"
+                [placeholder]="'schoose classes'"
+                [data]="dropdownList"
+                [(ngModel)]="selectedItems"
+                [settings]="dropdownSettings"
+                (onSelect)="onItemSelect($event)"
+                (onSelectAll)="onSelectAll($event)"
+              >
+              </ng-multiselect-dropdown>
+             
+          <!-- <select multiple formControlName="classes" [ngModel]="clasess">
+              <option selected>select Class </option>
+              <option *ngFor="let class of clasess " >{{class}}</option>
+          </select> -->
+      </div>
+      <span *ngIf="classes.errors?.required&&classes.touched" > subject is required</span>  
+
+    </div>
+    <div class="form-row">
+   
+        <div class="col">
+          <input type="text" style="width: 250px;" class="form-control"  [ngModel]="teacher.password" placeholder="password"  formControlName="password">
+          <span *ngIf="password.errors?.required&&password.touched" > password is required</span>
+          <span *ngIf="password.errors?.minlength&&password.touched" > Password is 8 letter </span>
+        </div>
+      </div>
+      <h4 *ngIf='isExist' class="text-center text-danger m-3">Sorry, this Teacher is exist ...</h4>
+
+      <button [disabled]="inValid()" style="margin-left: 40%"  class="btn btn-danger" type="submit"> Update Teacher</button>
+   
+
+
+
+
+
+
+      
+  
+    </form>
+    </div>

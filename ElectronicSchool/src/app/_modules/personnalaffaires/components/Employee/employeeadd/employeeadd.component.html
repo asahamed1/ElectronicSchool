@@ -1,0 +1,95 @@
+<div class="container  ADDform offset-md-3 col-md-6 w-lg-50 ">
+    <h3 class=" text-center m-2">Add New Employee</h3>
+    <form [formGroup]='addEmployee' (ngSubmit)='save()'>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Full Name : </label>
+            <div class="col-sm-9">
+                <input class="form-control" pattern="[a-zA-Z ]*"  type="text" formControlName="FullName">
+                <span class="text-danger" *ngIf="fullName.errors?.required&&fullName.touched">Full Name is required ..</span>
+                <span class="text-danger" *ngIf="fullName.errors?.minlength&&fullName.touched">Full Name must be at least 16 letters ..</span>
+                <!-- <span *ngIf="fullName.errors?.pattern.requiredPattern&&fullName.touched" > only letters allowed </span> -->
+
+            </div>
+        </div>
+        <br />
+        
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Password : </label>
+            <div class="col-sm-9"> <input class="form-control " type="password" formControlName="Password">
+                <span class="text-danger" *ngIf="Password.errors?.required&&Password.touched">Password is required ..</span>
+                <span class="text-danger" *ngIf="Password.errors?.minlength&&Password.touched">Password must be at least 8 letters ..</span>
+
+            </div>
+        </div>
+        <br />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">National ID : </label>
+            <div class="col-sm-9"><input class="form-control " (blur)='check()' type="number" formControlName="NationalID">
+                <span class="text-danger" *ngIf="NationalID.errors?.required&&NationalID.touched">National ID is required
+                    ..</span>
+                    <span class="text-danger" *ngIf="NationalID.errors?.min&&NationalID.touched||NationalID.errors?.max">National ID Must Be 14 digits
+
+                    ..</span></div>
+        </div>
+        <br />
+        <h4 *ngIf='isExist' class="text-center text-danger m-3">Sorry, this employee is exist ...</h4>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Salary : </label>
+            <div class="col-sm-9">
+                <input class="form-control " type="number" formControlName="Salary">
+                <span class="text-danger" *ngIf="Salary.errors?.required&&Salary.touched">Salary is required ..</span>
+
+            </div>
+        </div>
+        <br />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Address : </label>
+            <div class="col-sm-9">
+                <input class="form-control " type="string" formControlName="Address">
+                <span class="text-danger" *ngIf="address.errors?.required&&address.touched">Address is required ..</span>
+
+            </div>
+        </div>
+        <br />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Phone Number : </label>
+            <div class="col-sm-9">
+                <input class="form-control" type="number" formControlName="PhoneNumber" >
+                <span class="text-danger" *ngIf="PhoneNumber.errors?.required&&PhoneNumber.touched">PhoneNumber is required
+                    ..</span>
+                    <span class="text-danger" *ngIf="PhoneNumber.errors?.min&&PhoneNumber.touched||PhoneNumber.errors?.max">Must Be 11 digits ...
+
+               </span>
+            </div>
+        </div>
+        <br />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Faculty : </label>
+            <div class="col-sm-9">
+                <input class="form-control" pattern="[a-zA-Z ]*" (blur)='check()' type="text" formControlName="Faculty">
+                <span class="text-danger" *ngIf="faculty.errors?.required&&faculty.touched">Faculty is required ..</span>
+                <span class="text-danger" *ngIf="faculty.errors?.minlength&&faculty.touched">Faculty must be at least 16 letters ..</span>
+                <!-- <span *ngIf="fullName.errors?.pattern.requiredPattern&&fullName.touched" > only letters allowed </span> -->
+
+            </div>
+        </div><br/>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Date of Birth : </label>
+            <div class="col-sm-9">
+                <input class="form-control" type="date" formControlName="DOB">
+                <span class="text-danger" *ngIf="DOB.errors?.required&&DOB.touched">Date of Birth is required ..</span>
+            </div>
+        </div>
+        <br />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Date of Start Job: </label>
+            <div class="col-sm-9">
+                <input class="form-control" type="date" formControlName="DOJ">
+                <span class="text-danger" *ngIf="DOJ.errors?.required&&DOJ.touched">Date of Start Job is required ..</span>
+            </div>
+        </div>
+        <br />
+        <input type="submit" [disabled]='invalid' class="btn btn-danger w-25" value="Add" style="background-color: #d82a4e; margin-left: 40% ;">
+    </form>
+</div>

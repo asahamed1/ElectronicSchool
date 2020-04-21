@@ -1,0 +1,19 @@
+<div class="container bordre offset-md-3 col-md-6 w-lg-50 p-5" [style.height.px]='myHeight'>
+    <p class="h2 text-center text-dark">Add New Class</p>
+<form [formGroup]='addSubject' (ngSubmit)='save()'>
+    <label>Class Number :  </label>
+    <input class="form-control" type="text" formControlName="Name" (blur)='check()'>
+    <span class="text-danger" *ngIf="name.errors?.required&&name.touched">Class is required ..</span>
+    <span class="text-danger" *ngIf="(name.errors?.pattern||name.value.split('/')[1]==0)&&name.touched">Class Must be in this Form (1-6)  / (1-9) ..</span>
+   
+    <br/>
+    <label>Student Number :  </label>
+    <input class="form-control" type="number" formControlName="StdNO" >
+    <span class="text-danger" *ngIf="StdNO.errors?.required&&StdNO.touched">Student number is required ..</span>
+    <span class="text-danger" *ngIf="(StdNO.errors?.min||StdNO.errors?.max)&&StdNO.touched">Student Number Must be between 20 to 35 ..</span>
+   
+    <br/>
+    <p class="h4 text-center text-danger" *ngIf='errormsg!=""'>{{errormsg}}</p>
+    <input type="submit" class="btn btn-outline-dark" style="margin-left: 40%;" [disabled]='valid' value="Add">
+</form>
+</div>

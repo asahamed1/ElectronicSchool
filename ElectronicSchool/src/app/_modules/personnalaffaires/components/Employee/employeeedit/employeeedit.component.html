@@ -1,0 +1,102 @@
+
+<div class="container  ADDform offset-md-3 col-md-6 w-lg-50">
+    <h3 class=" text-center m-2">Edit Employee</h3>
+
+    <form [formGroup]='editEmployee' (ngSubmit)='save()'>
+        <!-- Basic Information Edit -->
+      <div *ngIf='state=="Basic"'>
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Full Name : </label>
+            <div class="col-sm-9">
+                <input class="form-control " type="text" formControlName="FullName" >
+                <span class="text-danger" *ngIf="fullName.errors?.required&&fullName.touched">Full Name is required ..</span>
+                <span class="text-danger" *ngIf="fullName.errors?.minlength">Full Name must be at least 16 letters ..</span>
+
+            </div>
+        </div>
+        <br />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">National ID : </label>
+            <div class="col-sm-9"><input readonly class="form-control " (blur)='check()' type="number"  formControlName="NationalID" >
+                <span class="text-danger" *ngIf="NationalID.errors?.required&&NationalID.touched">National ID is required
+                    ..</span>
+                <span class="text-danger" *ngIf="NationalID.errors?.min||NationalID.errors?.max">Must be 14 digits
+                    ..</span></div>
+        </div>
+        <br />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Date of Birth : </label>
+            <div class="col-sm-9">
+                <input class="form-control" type="date" formControlName="DOB">
+                <span class="text-danger" *ngIf="DOB.errors?.required">Date of Birth is required ..</span>
+            </div>
+        </div>
+        <br />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Date of Start Job : </label>
+            <div class="col-sm-9">
+                <input class="form-control" type="date" formControlName="DOJ" >
+                <span class="text-danger" *ngIf="DOJ.errors?.required">Date of Start Job is required ..</span>
+            </div>
+        </div>
+        <br />
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Faculty  : </label>
+            <div class="col-sm-9">
+                <input class="form-control " type="text" formControlName="Faculty" >
+                <span class="text-danger" *ngIf="faculty.errors?.required&&faculty.touched">Faculty is required ..</span>
+                <span class="text-danger" *ngIf="faculty.errors?.minlength">Faculty must be at least 16 letters ..</span>
+
+            </div>
+        </div>
+        <br />
+      </div>
+      <h4 *ngIf='isExist' class="text-center text-danger m-3">Sorry, this employee is exist ...</h4>
+
+      <!-- Variable Information Edit -->
+        <div *ngIf="state=='Variable'">
+            
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Password : </label>
+                <div class="col-sm-9"> <input class="form-control " type="string" formControlName="Password">
+                    <span class="text-danger" *ngIf="Password.errors?.required&&Password.touched">Password is required ..</span>
+                    <span class="text-danger" *ngIf="Password.errors?.minlength">Password must be at least 8 letters ..</span>
+
+                </div>
+            </div>
+            <br />
+            
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Salary : </label>
+                <div class="col-sm-9">
+                    <input class="form-control " type="number" formControlName="Salary" >
+                    <span class="text-danger" *ngIf="Salary.errors?.required">Salary is required ..</span>
+    
+                </div>
+            </div>
+            <br />
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Address : </label>
+                <div class="col-sm-9">
+                    <input class="form-control " type="string" formControlName="Address">
+                    <span class="text-danger" *ngIf="address.errors?.required">Address is required ..</span>
+    
+                </div>
+            </div>
+            <br />
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Phone Number : </label>
+                <div class="col-sm-9">
+                    <input class="form-control" type="number" formControlName="PhoneNumber">
+                    <span class="text-danger" *ngIf="PhoneNumber.errors?.required&&PhoneNumber.touched">Phone Number is required
+                        ..</span>
+                    <span class="text-danger" *ngIf="PhoneNumber.errors?.min||PhoneNumber.errors?.max">Must Be 11 digits
+                        ..</span>
+                </div>
+            </div>
+            <br />
+        </div>
+
+        <input type="submit" class="btn btn-danger " value="Update" style="background-color: #d82a4e; margin-left: 40% ;">
+    </form>
+</div>

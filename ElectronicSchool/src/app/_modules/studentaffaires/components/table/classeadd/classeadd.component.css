@@ -1,0 +1,7 @@
+
+.bordre{
+    border: 2px solid black;
+    box-shadow: gray 10px 10px 10px;
+    border-radius: 20px;
+    margin: 20px auto;
+}

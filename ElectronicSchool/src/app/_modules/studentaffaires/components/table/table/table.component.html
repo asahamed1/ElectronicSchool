@@ -1,0 +1,67 @@
+<h1 class="text-center p-3">Class Number :{{Allsubject.ClassNo}}</h1>
+<table class=" container table table-hover text-center table-responsive">
+    <thead class="thead-dark">
+        <tr>
+            <th></th>
+            <th>First</th>
+            <th>Second</th>
+            <th>Third</th>
+            <th>Forth</th>
+            <th>Fifth</th>
+            <th>Sixth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let n of days ; let i= index'>
+            <td>{{n}}</td>
+            <td *ngFor='let data of table[i]' >
+                <select class="form-control m-1" [(ngModel)]='data.SubjectName' #s1>
+                    <option  disabled value="no" >Select Subject Name</option>
+                    <option *ngFor='let sub of Allsubject.Subject' [value]='sub.Subject'>{{sub.Subject}}</option>
+                </select>
+                <select class="form-control m-1" *ngIf='data.SubjectName=="no"'>
+                    <option value="no" disabled>Select Teacher Name</option>
+                </select>
+                <span *ngIf='data.SubjectName!="no"'>
+                    <select   class="form-control m-1" [(ngModel)]='data.TeacherName'>
+                        <option value="no" disabled>Select Teacher Name</option>
+                    
+                        <option   *ngFor='let sub of Teachers'  [value]='sub._id' [style.display]="sub.Subject.toLowerCase()==data.SubjectName.toLowerCase() ? 'inline-block' : 'none'">
+                            <span *ngIf='sub.Subject.toLowerCase()==data.SubjectName.toLowerCase()'>{{sub.fullName}}</span>
+                        </option>
+                </select >
+                </span>
+                
+
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+       <tr *ngIf="check>0"><td colspan="7"><span class="h4 text-danger">Please, Fill All Table Data ..</span> </td></tr>
+        <tr><td colspan="7"><button class="btn  btn-outline-dark m-2" (click)='save()'>Save</button>
+
+            <button class="btn btn-outline-danger" data-toggle="modal"
+                            data-target="#exampleModalCenter">Reset</button>
+            <div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-danger" id="exampleModalLongTitle">Warning</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure, You want To Reset Table !
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-outline-danger"
+                                        (click)='Resertable()' data-dismiss="modal">Reset</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    </tfoot>
+</table>

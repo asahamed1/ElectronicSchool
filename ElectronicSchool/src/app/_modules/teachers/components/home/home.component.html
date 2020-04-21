@@ -1,0 +1,58 @@
+<div class="image container-fluid" style="padding: 0;"  >
+  <div class="overlay text-center">
+      <div class="container back">
+        <div class="row text-dark p-5">
+  <div class="col-6">
+            <p class="h5 p-4">Full Name</p>
+            <p class="h5 p-4">NationalID</p>
+            <p class="h5 p-4">Salary</p>
+            <p class="h5 p-4">Address</p>
+            <p class="h5 p-4">Phone Number</p>
+            <!-- <p class="h5 p-4">Data Of Birth</p> -->
+            <p class="h5 p-4">Date Of Hiring</p>
+            <p class="h5 p-4">Subject</p>
+
+
+          </div> 
+          <div class="col-6">
+            <p class="h5 p-4">{{techer['fullName']}}</p>
+            <p class="h5 p-4">{{techer.nationalId}}</p>
+            <p class="h5 p-4">{{techer.salary}}</p> 
+
+             <p class="h5 p-4">{{techer.Address}}</p> 
+
+            <!-- <p class="h5 p-4">{techer.password}}</p> -->
+             <p class="h5 p-4">{{techer.PhoneNumber}}</p>
+            <p class="h5 p-4">{{techer.DOH}}</p>
+            <p class="h5 p-4">{{techer.subjects.subjectName}}</p>
+
+
+          </div>
+         </div>
+      </div>
+  </div>
+ </div>  
+ 
+ <button *ngIf="teacherTableLength==0" class="btn btn-danger" style="background-color: #d82a4e;" (click)="showSchdual($event)"> Show Schedule</button>    
+
+ <table *ngIf="flag" class=" table table-hover">
+
+<thead>
+  <tr>
+    <th></th>
+    <th>First</th>
+    <th>Second</th>
+    <th>Third</th>
+    <th>Forth</th>
+    <th>fifth</th>
+    <th>Sixth</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor = 'let day of days ; let i = index'>
+
+   <td>{{day}}</td>
+   <td *ngFor ='let item of teacherTable[i]'>{{item}}</td>
+
+<p></p>
+<!-- <p>{{item.class}}</p> -->

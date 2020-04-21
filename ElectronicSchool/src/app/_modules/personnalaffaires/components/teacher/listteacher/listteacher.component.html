@@ -1,0 +1,98 @@
+<input type="text" [(ngModel)]="serachWord" style="width:400px; 
+margin:20px;" placeholder="Search" class="form-control" > 
+
+
+
+<div ng-if="false; else r;"></div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">fullname</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Edit Teacher</th>
+
+      <th scope="col">Delete</th>
+
+      <th scope="col">View </th>
+
+    </tr>
+  </thead>
+  <tbody  *ngFor="let teacher of techersList; let i=index">
+    <!-- <ng-template *ngFor="let teacher of techersList; let i=index" #r>   -->
+    
+   
+   <tr *ngIf="serachWord=='' || teacher.fullName.includes(serachWord)">
+      <td> {{teacher._id}} </td>
+      <td>{{teacher.fullName}}</td>
+      <td>{{teacher.Address}}</td>
+
+
+      <td>
+
+
+        {{teacher.phoneNumber}}
+      </td>
+      <!-- <td>
+        <select (change)="navigateTo(mySelect.value,teacher._id)" #mySelect>
+          <option selected>edit teacher</option>
+          <option *ngFor="let arr of arr" [value]="arr"> {{arr}}</option>
+        </select>
+      </td> -->
+
+<td>
+
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" style='background-color:black ; color: #fff;' role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Edit Employee 
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a [routerLink]="['/personalAffaires/Employee/TeacherEdit',teacher._id]" class="dropdown-item">Basic Info</a>
+  <a [routerLink]="['/personalAffaires/Employee/TeacherSalary',teacher._id]" class="dropdown-item" >Salary</a> 
+    </div>
+  </div>
+</td>
+
+      <td>
+        <button class="btn btn-outline-danger" data-toggle="modal" 
+        data-target="#exampleModalCenter">Delete</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger" id="exampleModalLongTitle">Warning</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure, You want To Delete !
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-danger"
+                    (click)="deleteTeacher(teacher._id)" data-dismiss="modal">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- <button (click)="deleteTeacher(teacher._id)" class="btn  btn-outline-danger">Delete</button> -->
+
+
+      </td>
+      <td>
+        <a [routerLink]="['/personalAffaires/Employee/Details',teacher._id]" class="btn  btn-outline-dark">View</a>
+      </td>
+
+    </tr>
+
+  
+  </tbody>
+</table> 

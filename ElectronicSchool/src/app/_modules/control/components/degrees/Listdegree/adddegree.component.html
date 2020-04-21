@@ -1,0 +1,31 @@
+<div style='min-height: 600px;' class="pt-5">
+
+   <div class="container pl-5">
+    <div class="col-4  col-sm-8 form-inline my-2 my-lg-0 m-3 " style="margin-right: 30px;display: inline; ">
+        <input class="form-control mr-sm-2" type="search"  [(ngModel)]="nameSearch" placeholder="Search Student Name" aria-label="Search">
+        <button class="btn btn-danger" (click)='SearchName()' style="background-color: #d82a4e;" type="submit">Search</button>
+    </div><br/><br/>
+    <div class="col-4  col-sm-8 form-inline my-2 my-lg-0 m-3 " style="margin-right: 30px; display: inline;">
+        <input class="form-control mr-sm-2" type="search"  [(ngModel)]="classSearch" placeholder="Search Class Name" aria-label="Search">
+        <button class="btn btn-danger" (click)='SearchClasss()' style="background-color: #d82a4e;" type="submit">Search</button>
+    </div>
+   </div>
+
+<table class="table table-hover table-striped text-center mt-5">
+    <thead class="thead-dark">
+        <tr>
+            <th>Student Name</th>
+            <th>Class</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody *ngFor ='let std of allStd'>
+        <tr *ngIf = '(resultSearch==""||std.FullName.toLowerCase().includes(resultSearch.toLowerCase()))&&(resultClass==""||std.Class.includes(resultClass))'>
+            <td>{{std.FullName}}</td>
+            <td>{{std.Class}}</td>
+            <td><button class="btn btn-outline-dark" [routerLink]='["/control/mainPage/UpdateDegrees",std.FullName]'>Show degrees</button></td>
+                
+        </tr>
+    </tbody>
+</table>
+</div>

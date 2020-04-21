@@ -1,0 +1,55 @@
+
+<div style="padding-top:20px;  background-color: black;">
+    <div class="row m-0">
+      <div class="col-lg-3 col-md-3">
+        <div class="logo">
+            <div class="row m-0">
+                <div class="col-lg-5">
+                    <a routerLink="/"><img src="../../../../assets/mulogoo.png" alt="Electronic School"
+                        style="width: 50px;height: 50px; margin: 10px; margin-left: 50px;" />
+                    </a>
+                </div>
+                <div class="col-lg-7">
+                    <span routerLink="/">
+                        <h4 style="align-items: baseline; cursor: pointer; color: white;">Elsaida Khadija School</h4>
+                      </span>
+                </div>
+            </div>
+          
+          
+  
+        </div>
+        <!-- <div class="nav-switch">
+          <i class="fa fa-bars"></i>
+        </div> -->
+      </div>
+      <div class="col-lg-8 col-md-8 p-0">
+        <a id="login" *ngIf='x=="false"' routerLink="/Login" class="site-btn header-btn">Login</a>
+        <a id='logout' *ngIf='x=="true"' routerLink="/" class="site-btn header-btn " (click)='logout()'>LogOut</a>
+
+        <nav class="main-menu">
+
+          <ul>
+            <li ><a style="color: black;">jjjjuuuuuuuuujjjj</a></li>
+            <li><a routerLink="/">Home</a></li>
+            <li ><a routerLink="/aboutus">About us</a></li>
+           
+            <!-- <li><a routerLink="/">Activities</a></li>
+            <li><a routerLink="/">News</a></li> -->
+            <li><a routerLink="/contactus">Contact Us</a></li>
+  
+          </ul>
+        </nav>
+        
+      </div>
+    </div>
+  </div>
+  
+<router-outlet></router-outlet>
+<div class="footer-bottom mt-0">
+  <div class="footer-warp">
+    <div class="copyright text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |<span style='color:#d82a4e'> Electronic School </span><i class="fa fa-heart-o" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+  </div>
+</div>

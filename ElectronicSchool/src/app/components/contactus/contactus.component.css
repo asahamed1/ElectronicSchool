@@ -1,0 +1,16 @@
+textarea{
+    height: 210px;
+    resize: none;
+    overflow: hidden;
+}
+fa-icon{
+    color:#d82a4e;
+}
+h1{
+    text-shadow: gray 2px 2px 2px;
+}
+.icon{
+    display: flex;
+    align-items:baseline;
+    justify-content: flex-start;
+}

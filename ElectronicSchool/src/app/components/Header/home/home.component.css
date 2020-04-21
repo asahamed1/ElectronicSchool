@@ -1,0 +1,31 @@
+
+.mypragrf {
+    text-align: justify;
+}
+body{
+    padding-top:10px;
+}
+.carousel-inner>.carousel-item>img{
+    width:40%;
+    height:200px;
+}
+.carousel-indicators>li{
+    padding:10px;
+}
+.carousel-indicators > li.active {
+    background-color:red;
+}
+
+
+.card{
+    transition: all 1s;
+    /* for slow  */
+ }
+
+
+ .content:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    background:-webkit-linear-gradient(top,#D82A4E,white);
+    box-shadow:#D82A4E 5px 5px 5px;
+}

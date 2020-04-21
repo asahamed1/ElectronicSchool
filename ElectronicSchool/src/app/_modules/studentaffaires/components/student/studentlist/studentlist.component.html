@@ -1,0 +1,78 @@
+<div  class='pt-5'>
+    
+    <div class="col-4  col-sm-8 form-inline my-2 my-lg-0 m-3 m-5" style="margin-right: 30px;display: inline; ">
+        <input class="form-control mr-sm-2" type="search"  [(ngModel)]="nameSearch" placeholder="Search Student Name" aria-label="Search">
+        <button class="btn btn-danger" (click)='SearchName()' style="background-color: #d82a4e;" type="submit">Search</button>
+    </div>
+    <table class="table table-hover  table-snipped table-responsive-lg mt-5 "  >
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>FullName</th>
+                <th>NationalID</th>
+                <th>Password</th>
+                <th>Adress</th>
+                <th>PhoneNumber</th>
+                <th>Class</th>
+                <th>DOB</th>
+            <th>Date Of Join </th>
+                <!-- <th>Degree</th> -->
+                <th>Operation</th>
+            </tr>
+        </thead>
+    
+        <tbody *ngFor="let student of students">
+            <tr *ngIf = '(resultSearch==""||student.FullName.toLowerCase().includes(resultSearch.toLowerCase()))'>
+                <td>{{student._id}}</td>
+                <td>{{student.FullName}}</td>
+                <td>{{student.NationalID}}</td>
+                <td>{{student.Password}}</td>
+                <td>{{student.Adress}}</td>
+                <td>{{student.PhoneNumber}}</td>
+                <td>{{student.Class}}</td>
+                <td>{{student.DOB|date :'dd/MM/yyyy'}}</td>
+            <td>{{student.DOJ|date :'dd/MM/yyyy'}}</td>
+                <!-- <td>{{student.Degree}}</td> -->
+                <td>
+                    <!-- <button type="button" class="btn btn-outline-dark"
+                        routerLink="/studentsPro/details/{{student._id}}">Details</button>&nbsp; -->
+                    <button type="button" class="btn btn-outline-dark"
+                        routerLink="/studentAffaires/Student/students/Studentedit/{{student._id}}">Edit</button>&nbsp;
+                    <button class="btn btn-outline-danger" data-toggle="modal"
+                        data-target="#exampleModalCenter">Delete</button>
+    
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" data-backdrop="static" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-danger" id="exampleModalLongTitle">Warning</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure, You want To Delete !
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-outline-danger"
+                                        (click)="deleteStudent(student._id)" data-dismiss="modal">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <a class="btn btn-danger" routerLink="/student/details/{{item._id}}">Details</a> -->
+                </td>
+    
+            </tr>
+        </tbody>
+    </table>
+
+
+
+<router-outlet>
+
+</router-outlet>
+</div>

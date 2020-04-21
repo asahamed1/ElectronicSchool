@@ -1,0 +1,117 @@
+<div class="row" style="padding: 0; margin: 0;">
+  <div class="col-md-6">
+    <div class="container d-flex text-center justify-content-center mt-5">
+      <form (ngSubmit)="login()" [formGroup]="loginuser">
+        <h2 class="mb-5">Login</h2>
+
+        <!-- <input class="form-check-input" type="radio" name="user"  formControlName="user" id="inlineRadio1"
+          value="EmployeeAffaires" (click)="getRadioValue($event)">
+        <label class="form-check-label" for="inlineRadio1">EmployeeAffaires</label> &nbsp;&nbsp; &nbsp;&nbsp;
+
+
+        
+
+        <input class="form-check-input" type="radio" name="user" formControlName="user" id="inlineRadio1"
+          value="StudentAffaires" (click)="getRadioValue($event)">
+        <label class="form-check-label" for="inlineRadio1">StudentAffaires</label>
+        <br /><br />
+
+
+        <input class="form-check-input" type="radio" name="user" formControlName="user" id="inlineRadio1"
+          value="Student" (click)="getRadioValue($event)">
+        <label class="form-check-label mr-4" for="inlineRadio1">Student</label>
+       
+
+        <input class="form-check-input" type="radio" name="user" formControlName="user" id="inlineRadio1"
+          value="Teacher" (click)="getRadioValue($event)">
+        <label class="form-check-label mr-4" for="inlineRadio1">Teacher</label>
+        
+
+        <input class="form-check-input" type="radio" name="user" formControlName="user" id="inlineRadio1" value="Parent"
+          (click)="getRadioValue($event)">
+        <label class="form-check-label mr-4" for="inlineRadio1">Parent</label>
+        
+
+        <input class="form-check-input" type="radio" name="user" formControlName="user" id="inlineRadio1"
+          value="Control" (click)="getRadioValue($event)">
+        <label class="form-check-label" for="inlineRadio1">Control</label> -->
+     
+
+
+        <div class="input-group mt-5 mb-5">
+          <span class="input-group-prepend"><i class="input-group-text">
+              <fa-icon [icon]='faUser' aria-hidden="true"></fa-icon>
+            </i></span>
+          <input type="number" class="form-control" formControlName="NationalID" placeholder="username" /><br />
+        </div>
+        <div class="text-danger" *ngIf="nationalId.errors?.required&&nationalId.touched">
+          Username required
+        </div>
+        <div class="text-danger" *ngIf="(nationalId.errors?.min||nationalId.errors?.max)&&nationalId.touched">
+          National ID Must be 14
+        </div>
+
+        <div class="input-group mt-5 mb-5 ">
+          <span class="input-group-prepend"><i class="input-group-text">
+              <fa-icon [icon]='faLock' aria-hidden="true"></fa-icon>
+            </i></span><input type="password" class="form-control" formControlName="Password"
+            placeholder="password" /><br />
+        </div>
+        <span class="text-danger" *ngIf="password.errors?.required&&password.touched">
+          Password required
+        </span>
+        <span class="text-danger" *ngIf="password.errors?.minlength&&password.touched">
+          min lentg {{password.errors?.minlength.requiredLength}}
+        </span>
+       
+        <!-- style="background-color: #f5a9b8;"  -->
+        <select class='custom-select' required (click)='onOptionsSelected($event)' formControlName="user" >
+          <option selected disabled value=-1> Select Category</option>
+          
+          <option class='user' *ngFor='let user of options' [value]="user" >{{user}}</option>
+        </select>
+        <div class="text-danger" *ngIf='errMsg != ""'>{{this.errMsg}}</div>
+        <div>
+          <input class="btn btn-lg btn-danger m-2" [disabled]='formValid()' type="submit" style="background-color: #d82a4e;"
+            value="Log In">
+
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+
+  
+
+  <div class=" d-none d-md-block col-md-6 loginSlider">
+    <ngb-carousel [showNavigationArrows]="false" 
+  [showNavigationIndicators]="true"
+  interval="2000"
+  [keyboard]="true"
+  [pauseOnHover]="true"
+  [wrap]="true"
+  [activeId]="'secondSlide'">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="assets/Login/unnamed.jpg" alt="Angular Carousel 1">
+      </div>
+    </ng-template>
+    
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="assets/Login/Larkmead_School,_Abingdon,_Oxfordshire.png" alt="Angular Carousel 2">
+      </div>
+
+    </ng-template>
+     <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="assets/inclusive-classrooms.jpg" alt="Angular Carousel 2">
+      </div>
+
+    </ng-template>
+  </ngb-carousel>
+    
+  </div>
+
+</div>

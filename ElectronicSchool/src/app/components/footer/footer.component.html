@@ -1,0 +1,36 @@
+
+	<!-- footer section -->
+	<footer class="footer-section spad pb-0">
+		<div class="footer-top">
+			<div class="footer-warp">
+				<div class="row">
+					<div class="widget-item"></div>
+					<div class="widget-item">
+						<h4>Contact Info</h4>
+						<ul class="contact-list">
+							<li>Mohye El-Deen Abou El-Ezz,<br> Mansoura Qism 2, Mansoura,<br> Dakahlia Governorate</li>
+							<li>(050)2316616,2316519</li>
+							<li>elsaidakhadiga@gmail.com</li>
+						</ul>
+					</div>
+					<div class="widget-item">
+						<h4>Pages</h4>
+						<ul>
+							<li><a routerLink="/">Home</a></li>
+            <li ><a routerLink="/aboutus">About us</a></li>
+           
+            <li > <a id="login" *ngIf='x=="false"' routerLink="/Login" >Login</a>
+				<a id='logout' *ngIf='x=="true"' routerLink="/" (click)='logout()'>LogOut</a></li>
+           
+            <li><a routerLink="/contactus">Contact Us</a></li>
+							
+						</ul>
+					</div>
+				
+					
+					
+				</div>
+			</div>
+		</div>
+		</footer>
+	<!-- footer section end -->

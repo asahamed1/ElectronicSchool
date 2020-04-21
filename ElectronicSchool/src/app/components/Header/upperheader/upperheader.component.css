@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding:10px;
+    background-color:black;
+}
+
+.list{
+    display: flex; 
+    align-items: baseline;
+}
+
+.info__data{
+    font-size: 15px;
+    color: white;
+}
+.info__data:hover{
+    color:#f7631b;
+}
+
+

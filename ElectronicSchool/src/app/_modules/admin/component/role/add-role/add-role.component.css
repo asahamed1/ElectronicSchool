@@ -1,0 +1,62 @@
+/* div{
+    display: inline-block;
+    margin-left: 20px
+} */
+#addrole{
+    padding: 25px;
+    margin: 20px auto;
+    box-shadow: gray 10px 10px 10px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    height: 435px;
+    margin-left: 25% !important;
+    margin-top: 7% !important;
+    margin-bottom: 7% !important;
+    width: 45% !important;
+
+
+}
+div{
+margin-top: 5px;
+}
+button{
+margin-left: 50px;
+}
+/* input:first-of-type{
+width: px;
+} */
+form{
+width: 600px;
+margin-top: 20px;   
+border: 3px solid orange;
+border-radius: 10px;
+margin-bottom: 10px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+/* display: none; <- Crashes Chrome on hover */
+-webkit-appearance: none;
+margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+-moz-appearance:textfield; /* Firefox */
+}
+input{
+width: 200px;
+display: inline-block;
+}
+#input1{
+margin-left: 139px;
+}
+#i1{
+margin-left: 238px;
+margin-top: 30px;
+font-weight: bold;
+}
+.btn{
+margin-left:320px;
+margin-top: 30px;
+}

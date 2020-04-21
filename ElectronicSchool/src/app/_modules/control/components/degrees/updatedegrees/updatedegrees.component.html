@@ -1,0 +1,25 @@
+<p class="h2 text-center text-dark">update degrees!</p>
+<h5 class="pl-2">Student Name : {{student.FullName}}</h5>
+<h5 class="pl-2 mb-4">Class Number : {{student.Class}}</h5>
+
+    <table class="table table-hover table-striped text-center ">
+        <thead class="thead-dark">
+            <tr>
+                <th>Subject Name </th>
+                <th>Degree</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr *ngFor='let subject of saveDegrees,let i = index;'>
+                <td>{{subject.SubjectName}}</td>
+                <td><input   style="margin-left: 25%;" type="number" class="form-control w-50" min="0" (blur)='check()' oninput="this.value = Math.abs(this.value)" [(ngModel)]='subject.Degree' /></td>
+           <!-- oninput="this.value = Math.abs(this.value)"  => to don't accept negative values -->
+            </tr>
+            <tr *ngIf='error.length >0'> 
+                <td colspan="2" class="h5 text-danger" ><div  *ngFor='let err of error'>Subject : {{err.name}} , Max degree must be : {{err.max}}</div></td></tr>
+       
+        </tbody>
+    </table>
+    <input style="margin-left: 40%;" type="submit" class="btn btn-outline-dark  mb-5" (click)='save()'  value="Update">
+   

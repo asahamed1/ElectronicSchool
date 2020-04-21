@@ -1,0 +1,33 @@
+<div class="container offset-md-3 col-md-6 w-lg-50 back" style="padding: 5px;">
+    <ul class="list-group list-group-flush">
+        <!-- <label class="h3">ID</label>
+        <li class="list-group-item"> <input type="number" [(ngModel)]="EditParent._id" class="form-control" disabled>
+        </li> -->
+        <label class="h4">Name</label>
+        <li class="list-group-item"> <input type="text" [(ngModel)]="EditParent.name" class="form-control">
+        </li>
+        <label class="h4">User Name</label>
+        <li class="list-group-item"> <input type="text" [(ngModel)]="EditParent.userName" class="form-control">
+        </li>
+        <label class="h4">Password</label>
+        <li class="list-group-item"> <input type="number" [(ngModel)]="EditParent.password" class="form-control">
+        </li>
+        <label class="h4">NationalId</label>
+        <li class="list-group-item"> <input type="number" (blur)='check()' [(ngModel)]="EditParent.nationalId" class="form-control">
+        </li>
+        <label class="h4">Address</label>
+        <li class="list-group-item"> <input type="text" [(ngModel)]="EditParent.Address" class="form-control">
+        </li>
+        <label class="h4">Phone</label>
+        <li class="list-group-item"> <input type="text" [(ngModel)]="EditParent.phoneNumber" class="form-control">
+        </li>
+        <label class="h4">Student ID</label>
+        <li class="list-group-item"> <input type="text" [(ngModel)]="EditParent.student_nationalId" class="form-control">
+        </li>
+        
+    </ul>
+    <h4 *ngIf='isExist' class="text-center text-danger m-3">Sorry, this parent is exist ...</h4>
+
+    <input type="submit" (click)="savaEdit()" class="btn btn-danger" style='margin-left: 45%; background-color:#d82a4e ;' value="Edit">
+
+</div>

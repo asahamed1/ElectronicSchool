@@ -1,0 +1,38 @@
+<div class="row p-0 m-0 offset-md-3 col-md-6 w-lg-50" id="Addactivity">
+    <div class="col-12" [style.height.px]="innerHeight">
+        <h3>Add Activity</h3>
+        <form [formGroup]='addActivity' (ngSubmit)='save()'>
+            <div class="form-group row">
+                <label for="img" id="img">Insert Image :</label>
+                <!-- <input type="file" class="form-control" id="img" formControlName="img" placeholder="Insert Image"> -->
+                <!-- <span class="text-danger" *ngIf="img.touched &&  img.errors?.required"> Image is required </span> -->
+                <div class="preview" *ngIf="preview && preview !== null">
+                    <img [src]="preview" [alt]="addActivity.value.img">
+                </div>
+            </div>
+            <!--**************************************-->
+            <!-- File Input -->
+           <div class="form-group" id="file">
+               <input type="file" (change)="uploadFile($event)">
+           </div>
+
+         <!--**************************************-->
+            <div class="form-group row">
+                <label  class="col-sm-3 col-form-label">Title : </label>
+                <input class="form-control" type="text" formControlName="title" placeholder="Title">
+                <!-- <span class="text-danger" *ngIf="title.touched && title.errors?.required">Title is required </span> -->
+            </div>
+            <!--**************************************-->
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Description : </label>
+                <input class="form-control" type="text" formControlName="description" placeholder="Description">
+                <!-- <span class="text-danger" *ngIf="description.touched && description.errors?.required">Description is required </span> -->
+            </div>
+            <!--**************************************-->
+                <input type="submit" value="Add Activity" class="btn btn-danger ">
+        </form>
+    </div>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

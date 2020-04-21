@@ -1,0 +1,12 @@
+.ADDform{
+    
+    padding: 25px;
+
+    margin: 20px auto;
+    box-shadow: gray 10px 10px 10px;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+h3{
+    text-shadow: gray 2px 2px 2px;
+}

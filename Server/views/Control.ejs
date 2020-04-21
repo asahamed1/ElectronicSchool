@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Control </h1>
+        <h2>All Students</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Student Year</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%AllStudent.forEach((std)=>{%>
+                    <tr>
+                        <td><%=std.name%></td>
+                        <td><%=std.year%></td>
+                        <td><a href="/control/AddDegrees/<%=std.name%>">ADD degrees</a></td>
+                     </tr>    
+                <%})%>
+            </tbody>
+        </table>
+
+       
+    </body>
+</html>
